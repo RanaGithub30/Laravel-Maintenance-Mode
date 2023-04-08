@@ -1,0 +1,24 @@
+Step By Step Process
+----------------------------------
+
+1) Run following command for maintenance mode --> php artisan down
+2) Remove site from maintenance Mode --> php artisan up
+
+////////////
+
+3) Bypass maintenance mode by --> php artisan down --secret="your_secret"
+   // Now anyone can access your site by --> sitename/your_secret even when it is in maintenance mode
+
+
+///////////
+
+Create Custom Maintenance Page
+-----------------------------------------
+
+4) In order to change override the default 503 maintenance page, we need to add our own view at: resources/views/errors/503.blade.php.
+
+/////////////////////
+
+5) If you want visitor refresh the page after number of seconds being set
+   php artisan down --retry=60
+
